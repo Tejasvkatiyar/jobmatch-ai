@@ -537,7 +537,10 @@ setMatchHistory((current) => {
 };
 
   return (
-    <main className="page">
+    <main
+      className="page"
+      suppressHydrationWarning
+    >
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="brand">
@@ -723,15 +726,16 @@ setMatchHistory((current) => {
       </div>
     </div>
 
-    <button
-      className="secondary-button"
-      onClick={getRecommendations}
-      disabled={recommendationLoading}
-    >
-      {recommendationLoading
-        ? "Finding matches..."
-        : "Find my best matches →"}
-    </button>
+   <button
+  suppressHydrationWarning
+  className="secondary-button"
+  onClick={getRecommendations}
+  disabled={recommendationLoading}
+>
+  {recommendationLoading
+    ? "Finding matches..."
+    : "Find my best matches →"}
+</button>
   </div>
 
   {recommendationError && (
@@ -1195,7 +1199,8 @@ setMatchHistory((current) => {
   />
 
   <button
-    className="upload-button"
+  suppressHydrationWarning
+  className="upload-button"
     onClick={() =>
       fileInputRef.current?.click()
     }
@@ -1298,6 +1303,7 @@ setMatchHistory((current) => {
           </div>
 
           <button
+            suppressHydrationWarning
             className="primary-button large"
             onClick={analyze}
             disabled={loading}
